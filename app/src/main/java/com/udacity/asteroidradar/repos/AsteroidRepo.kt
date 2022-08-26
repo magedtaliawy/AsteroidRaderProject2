@@ -8,6 +8,7 @@ import com.udacity.asteroidradar.Constants
 import com.udacity.asteroidradar.Data.api.AsteroidApi.retrofitService
 import com.udacity.asteroidradar.Data.Local.database.AsteroidDB
 import com.udacity.asteroidradar.Data.Local.database.asDomainModel
+import com.udacity.asteroidradar.api.getPreviousDay
 import com.udacity.asteroidradar.api.getSeventhDay
 import com.udacity.asteroidradar.api.getToday
 import com.udacity.asteroidradar.api.parseAsteroidsJsonResult
@@ -60,7 +61,7 @@ class AsteroidRepo(val database: AsteroidDB) {
 
     suspend fun deletePreviousDayAsteroids() {
         withContext(Dispatchers.IO) {
-            database.sleepDao.deletePreviousDayAsteroids(getToday())
+            database.sleepDao.deletePreviousDayAsteroids(getPreviousDay())
         }
     }
 

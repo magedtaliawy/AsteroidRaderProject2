@@ -70,6 +70,27 @@ fun getSeventhDay(): String {
     return formatDate(calendar.time)
 }
 
+  public fun getPreviousDay(): String {
+
+    // Gets a calendar using the current time in the default time zone with the default FORMAT locale.
+    val calendar = Calendar.getInstance()
+
+    // Subtracts 1 day from the current time of the calendar
+    // Returns the previous day Calender date
+    calendar.add(Calendar.DAY_OF_MONTH, -1)
+
+    // Returns a Date Object representing the Calendar's time value
+    val previousDayTime = calendar.time
+
+    // Constructs a date format
+    val dateFormat = SimpleDateFormat("YYYY-MM-dd", Locale.getDefault())
+
+    // Formats the Date Object into a date String
+    val previousDayString = dateFormat.format(previousDayTime)
+
+    return previousDayString
+}
+
 private fun formatDate(date: Date): String {
     val dateFormat = SimpleDateFormat(Constants.API_QUERY_DATE_FORMAT, Locale.getDefault())
     return dateFormat.format(date)
