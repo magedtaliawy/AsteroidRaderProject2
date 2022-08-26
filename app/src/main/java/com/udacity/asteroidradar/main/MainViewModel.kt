@@ -77,9 +77,9 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             )
                 .await()
 
-            _isloading.value = false
+            _isloading.postValue(false)
 
-            _pictureOfDay.value = pictureOfDay
+            _pictureOfDay.postValue(pictureOfDay)
 
         }
     }

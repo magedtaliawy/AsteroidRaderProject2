@@ -51,7 +51,6 @@
             android:id="@+id/asteroid_status"
             android:layout_width="45dp"
             android:layout_height="45dp"
-            android:contentDescription="@string/asteroid_status_icon"
             app:statusIcon="@{asteroid.potentiallyHazardous}"
             tools:srcCompat="@drawable/ic_status_potentially_hazardous"
             app:layout_constraintEnd_toEndOf="parent"
